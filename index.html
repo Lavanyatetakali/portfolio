@@ -181,7 +181,6 @@ nav{
 }
 .btn-download:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);}
 .btn-download svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-
 .hero-socials{
   display:flex;gap:20px;margin-top:40px;
   animation:fadeUp .9s .4s ease both;
@@ -480,6 +479,12 @@ section:nth-child(even){background:var(--bg2);}
   border-top:1px solid rgba(255,255,255,0.07);
   flex-wrap:wrap;gap:10px;
 }
+.proj-btns{
+  display:flex;align-items:center;gap:10px;
+  flex-wrap:wrap;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
 .proj-github{
   display:inline-flex;align-items:center;gap:7px;
   font-size:12px;font-weight:600;letter-spacing:0.5px;
@@ -490,6 +495,19 @@ section:nth-child(even){background:var(--bg2);}
   transition:background .2s,border-color .2s;
 }
 .proj-github:hover{background:rgba(230,51,41,0.18);border-color:var(--red);}
+.proj-live{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:600;letter-spacing:0.5px;
+  color:#22c55e;text-decoration:none;
+  border:1px solid rgba(34,197,94,0.35);
+  padding:6px 14px;border-radius:4px;
+  background:rgba(34,197,94,0.07);
+  transition:background .2s,border-color .2s;
+}
+.proj-live:hover{background:rgba(34,197,94,0.18);border-color:#22c55e;}
+.proj-live svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.proj-live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:livePulse 1.5s infinite;}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
 .proj-github svg{width:13px;height:13px;fill:currentColor;}
 
 
@@ -596,7 +614,9 @@ footer span{color:var(--red);}
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="theme-toggle">🌙</div>
@@ -802,37 +822,35 @@ footer span{color:var(--red);}
   <div class="proj-grid">
     <div class="proj-card">
       <div class="proj-num">01</div>
-      <div class="proj-title">College Bus Tracking System</div>
-      <p class="proj-desc">Real-time GPS bus tracking managing 200+ student records. Features secure login, role-based access, route management, and live map integration. SQL queries optimized for 25% faster response, deployed on Apache Tomcat.</p>
-      <div class="proj-footer">
-        <div class="proj-tags">
-          <span class="proj-tag">Java Servlets</span>
-          <span class="proj-tag">MySQL</span>
-          <span class="proj-tag">Apache Tomcat</span>
-          <span class="proj-tag">MVC</span>
-          <span class="proj-tag">GPS</span>
-        </div>
-        <a href="https://github.com/Lavanyatetakali/collegebustracking" target="_blank" class="proj-github">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
+      <div class="proj-title-row">
+        <div class="proj-title">College Bus Tracking System</div>
+        <a href="https://github.com/Lavanyatetakali/collegebustracking" target="_blank" class="proj-github" title="View on GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
       </div>
+      <p class="proj-desc">Real-time GPS bus tracking managing 200+ student records. Features secure login, role-based access, route management, and live map integration. SQL queries optimized for 25% faster response, deployed on Apache Tomcat.</p>
+      <div class="proj-tags" style="margin-bottom:20px;"><span class="proj-tag">Java Servlets</span><span class="proj-tag">MySQL</span><span class="proj-tag">Apache Tomcat</span><span class="proj-tag">MVC</span><span class="proj-tag">GPS</span></div>
     </div>
     <div class="proj-card">
       <div class="proj-num">02</div>
-      <div class="proj-title">Mobile Calculator App</div>
+      <div class="proj-title-row">
+        <div class="proj-title">Mobile Calculator App</div>
+        <a href="https://github.com/Lavanyatetakali/calculator-App" target="_blank" class="proj-github" title="View on GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+      </div>
       <p class="proj-desc">Cross-platform calculator using React Native (Expo) with dynamic state management via React Hooks. Reusable UI components, robust input validation, and smooth rendering performance tested across 50+ devices.</p>
-      <div class="proj-footer">
-        <div class="proj-tags">
-          <span class="proj-tag">React Native</span>
-          <span class="proj-tag">Expo</span>
-          <span class="proj-tag">React Hooks</span>
-          <span class="proj-tag">Cross-platform</span>
-        </div>
-        <a href="https://github.com/Lavanyatetakali/calculator-App" target="_blank" class="proj-github">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          View on GitHub
-        </a>
+      <div class="proj-tags" style="margin-bottom:20px;"><span class="proj-tag">React Native</span><span class="proj-tag">Expo</span><span class="proj-tag">React Hooks</span><span class="proj-tag">Cross-platform</span></div>
+      <div class="proj-btns">
+        <a href="https://greentechines.netlify.app/" target="_blank" class="proj-live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg> Live Demo</a>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-title-row">
+        <div class="proj-title">FreshMart — Grocery Store</div>
+        <a href="https://github.com/lavanyatetakali/freshmart" target="_blank" class="proj-github" title="View on GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+      </div>
+      <p class="proj-desc">A fully responsive online grocery store web application featuring product listings, category navigation, shopping cart, and a clean modern UI. Built with a focus on user experience and smooth browsing across all devices.</p>
+      <div class="proj-tags" style="margin-bottom:20px;"><span class="proj-tag">HTML5</span><span class="proj-tag">CSS3</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Responsive</span></div>
+      <div class="proj-btns">
+        <a href="https://lavanyatetakali.github.io/freshmart/" target="_blank" class="proj-live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg> Live Demo</a>
       </div>
     </div>
   </div>
